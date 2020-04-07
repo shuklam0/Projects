@@ -60,10 +60,10 @@ F6 = F4 + geom_hline(yintercept = max(SP$Drawdown[(nrow(SP)-251):nrow(SP)]), col
 S1 = ggplot(Sensex) + geom_line(aes(x=Dt, y=Cl, col="Sensex")) + theme_bw() + scale_y_log10() + geom_line(aes(x=Dt, y=High)) + theme(legend.position = "none") + xlab("") + ylab("Index Value") + ggtitle("Sensex")
 recessions.trimS = recessions.df[recessions.df$Trough>min(Sensex$Dt),]
 S2 = S1 + geom_rect(data=recessions.trimS, aes(xmin=Peak, xmax=Trough, ymin=0, ymax=max(Sensex$Cl)), fill='pink', alpha=0.4)
-S3 = S2 + geom_point(data =DJ[DJ$Drawdown>DJ$Drawdown[nrow(DJ)]], aes(x=Dt, y=DJI, col="current level", alpha=0.1))
+S3 = S2 + geom_point(data =Sensex[Sensex$Drawdown>Sensex$Drawdown[nrow(Sensex)]], aes(x=Dt, y=Cl, col="current level", alpha=0.1))
 
-S4 = ggplot(DJ) + geom_line(aes(x=Dt, y=Drawdown)) + theme_bw() + ylim(c(0.6,0)) + ggtitle("Sensex Drawdown") + xlab("") + geom_rect(data=recessions.trim, aes(xmin=Peak, xmax=Trough, ymin=0, ymax=0.6), fill='pink', alpha=0.4) + xlab("") + ggtitle("Sensex Drawdown")
-S5 = S4 + geom_line(data =DJ[DJ$Drawdown>DJ$Drawdown[nrow(DJ)]], aes(x=Dt, y=Drawdown, col="current level"))
+S4 = ggplot(Sensex) + geom_line(aes(x=Dt, y=Drawdown)) + theme_bw() + ylim(c(0.6,0)) + ggtitle("Sensex Drawdown") + xlab("") + geom_rect(data=recessions.trimS, aes(xmin=Peak, xmax=Trough, ymin=0, ymax=0.6), fill='pink', alpha=0.4) + xlab("") + ggtitle("Sensex Drawdown")
+S5 = S4 + geom_line(data =Sensex[Sensex$Drawdown>Sensex$Drawdown[nrow(Sensex)]], aes(x=Dt, y=Drawdown, col="current level"))
 
 S6 = S4 + geom_hline(yintercept = max(Sensex$Drawdown[(nrow(Sensex)-251):nrow(Sensex)]), col="red") + geom_hline(yintercept = Sensex$Drawdown[nrow(Sensex)], col="blue")
 
