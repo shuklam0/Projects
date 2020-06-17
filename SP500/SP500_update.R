@@ -15,11 +15,12 @@ last.date <- as.Date("2020-06-08")
 top.date <- as.Date("2020-02-14")
 bottom.date <- as.Date("2020-03-23")
 
-###################### Use Quantmod to get stock Prices ########################
-
+###################### Use Quantmod, BatchGetSymbols to get stock Prices ########################
 
 df.SP500 <- data.table(GetSP500Stocks())
 Stocks <- read_csv('Stocks.csv')
+
+# getSymbols('^GSPC', from=first.date, to=last.date+1)
 
 SP = BatchGetSymbols(tickers=df.SP500$Tickers, first.date = first.date, last.date = last.date+1)
 # SP1 = data.table(SP[[1]])
@@ -51,7 +52,7 @@ SPX_S = summarise(group_by(SPX, GICS.Sector, Dt),
                   # Price_Sec = sum(Price.Adj*MCap, na.rm=T)/sum(MCap, na.rm=T),
                   # Price_Sec_min = sum(Price.Adj_min*MCap, na.rm=T)/sum(MCap, na.rm=T)
                   )
-SPX_S = rbind(SPX_S, SP500[,-'Price'])
+# SPX_S = rbind(SPX_S, SP500[,-'Price'])
 
 CBP <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00","#000000", "#CC79A7", "#FF00FF","#003366", "indianred4")
 
@@ -81,6 +82,7 @@ P2 = ggplot(SPX, aes(x=Dt, y=Price.Adj_min, group=TICKER, colour=GICS.Sector)) +
   geom_vline(xintercept = c(top.date,bottom.date), colour = c("blue",'red'), linetype='dashed') +
   geom_hline(yintercept = 100, linetype='dashed')
 
+## Sectoral Performance ##
 P3 = ggplot(SPX_S, aes(x=Dt, y=Price_Sec, group=GICS.Sector, colour=GICS.Sector)) + 
         geom_line() +
         scale_colour_manual(values = CBP) + 
@@ -96,8 +98,8 @@ P4 = ggplot(SPX_S, aes(x=Dt, y=Price_Sec_min, group=GICS.Sector, colour=GICS.Sec
      scale_colour_manual(values = CBP) + 
      theme(legend.position="none") + 
      xlab('') + ylab('') + ggtitle('Adjusted Price Movement (YTD) - Sectoral', subtitle = 'All Stock Prices at 100 on 23-Mar-2020') +
-        geom_label_repel(data=subset(SPX_S, Dt==first.date), aes(label=GICS.Sector), hjust=0) +
-        geom_label_repel(data=subset(SPX_S, Dt==last.date), aes(label=GICS.Sector), hjust=0) +
+     geom_label_repel(data=subset(SPX_S, Dt==first.date), aes(label=GICS.Sector), hjust=0) +
+     geom_label_repel(data=subset(SPX_S, Dt==last.date), aes(label=GICS.Sector), hjust=0) +
   geom_vline(xintercept = c(top.date,bottom.date), colour = c("blue",'red'), linetype='dashed') +
   geom_hline(yintercept = 100, linetype='dashed')
 
