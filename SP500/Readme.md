@@ -5,3 +5,14 @@ However, once we get over the hangover of Coronavirus, these are the sectors tha
 PS: I used quantmod & ggplot packages to create these graphs in R.
 
 https://www.linkedin.com/feed/update/urn:li:activity:6658083751244984320/
+
+
+Update on the above:
+
+Last week, S&P500 retook the year-end level (3,230.78) on 8th June. However, not all stocks/sectors performed the same. While Tech and Health care stocks were expected to outperform, Energy and Consumer stocks were supposed to be laggards (at least until we have a cure).
+
+However, from the date market made the bottom (23rd March), the stocks that gave the best performance were mostly Energy and Consumer. I was surprised to see the names of Royal Caribbean Cruises, Norwegian Cruise & MGM among the top 10 best performers from 23-Mar-20 to 8-Jun-20.
+
+Needless to say, investors are desperately waiting for a vaccine.
+
+https://www.linkedin.com/posts/mohit-shukla_stocks-markets-investing-activity-6678907577998413824-nbrI
