@@ -35,3 +35,4 @@ However, the year truly belonged to these two companies:
 
 Given the uncertainty around the new virus strain and vaccination process, it'll be hard to predict how the markets will behave in the new year. All we can hope, is to not have such a topsy-turvy ride again.
 
+https://www.linkedin.com/posts/mohit-shukla_stocks-investing-tesla-activity-6751645508755894272-fHp0
