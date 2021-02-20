@@ -1,0 +1,32 @@
+Package: shinyflags
+Version: 0.1.0
+Title: Insert Country Flags In Shiny Applications
+Description: Insert country flags in Shiny applications.
+Authors@R: c(
+  person("Pierre", "Formont", email = "pierre.formont@gmail.com", role = c("aut", "cre")),
+  person("Panayiotis", "Lipiridis", email = "yo@lip.is", role = c("ctb", "cph"), comment = "Author of flag-icon-css")
+  )
+License: MIT + file LICENSE
+Imports: htmltools
+Suggests: shiny
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+LazyData: true
+ByteCompile: true
+RoxygenNote: 6.0.1
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: shinyflags
+RemoteUsername: tutuchan
+RemoteRef: master
+RemoteSha: fa62fd265fe65a931925f2fefa3a428fcc8d5984
+GithubRepo: shinyflags
+GithubUsername: tutuchan
+GithubRef: master
+GithubSHA1: fa62fd265fe65a931925f2fefa3a428fcc8d5984
+NeedsCompilation: no
+Packaged: 2020-07-19 23:53:48 UTC; mohit
+Author: Pierre Formont [aut, cre],
+  Panayiotis Lipiridis [ctb, cph] (Author of flag-icon-css)
+Maintainer: Pierre Formont <pierre.formont@gmail.com>
+Built: R 4.0.2; ; 2020-07-19 23:53:52 UTC; windows
