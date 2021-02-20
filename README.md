@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+This is a repository of all projects done by me, starting in 2020. The
 
-You can use the [editor on GitHub](https://github.com/mohitshuklaMFE/Market/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## a) COVID19 numbers
+Using COVID19 library, I created a Shiny page to track COVID 19 global and country specific numbers. The page is available [here](https://shuklam.shinyapps.io/COVID19/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## b) SP500 Stocks
+A summary of stocks' performance during the first half of 2020.
 
-### Markdown
+## c) SP500 Stocks - update
+As SP500 retook the year end level, a relook at how the individual stocks behaved
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mohitshuklaMFE/Market/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## d) Performance comparison between SP500 & Nifty500, i.e. India vs USA
+A comparison on daily returns of SP500 & Nifty500 (Total Return in USD).
