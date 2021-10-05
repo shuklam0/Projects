@@ -19,7 +19,7 @@ SP1 = SP[endpoints(SP$ref.date, on = "month")]
 SP1[, Mth := month(ref.date)]
 SP1[, Yr := year(ref.date)]
 
-SP1[, Ret := log(price.close) - shift(log(price.close)) %>% round(digits = 5)]
+SP1[, Ret := log(price.close) - shift(log(price.close))]
 SP1 = SP1[-1]
 
 ################# Plots #####################
