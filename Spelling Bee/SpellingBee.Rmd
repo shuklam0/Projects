@@ -1,0 +1,57 @@
+---
+title: "Spelling Bee Help"
+# author: "Mohit Shukla"
+# date: '2022-Apr-23'
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(words)
+library(tidyverse)
+library(shiny)
+```
+
+
+
+This document is created as a help or solution to the NYTimes [Spelling Bee Game](https://www.nytimes.com/puzzles/spelling-bee). In the game, the user has to create words that contain at least 4 letters, and must include the central letter. 
+
+This tool helps the user list all such words. The user just has to Select a Central Letter and fill the other 6 Letters.
+
+
+
+```{r formulas, echo=FALSE}
+`%!in%` <- Negate(`%in%`)
+L = 4       # min length of words
+
+W = words::words
+W$word = W$word %>% str_to_upper
+W = W[W$word_length>=max(L,1),1] %>% unlist
+```
+
+If you need more solving tips, [this article can help](https://www.nytimes.com/2021/12/09/crosswords/spellingbee-tips.html).
+
+
+## Select Inputs
+
+```{r inputs, echo=FALSE}
+inputPanel(
+  selectizeInput(inputId="L2", label=h3("Select Central Letter"), LETTERS, selected=NULL, multiple=FALSE, options=NULL),
+  selectizeInput(inputId="L1", label=h3("Select 6 Other Letters"), LETTERS, selected=NULL, multiple=TRUE, options=NULL)
+)
+```
+
+
+## Output 
+
+```{r output, echo=FALSE}
+renderText({
+  L3 = LETTERS[which(LETTERS %!in% c(input$L1,input$L2))]
+  W = W[!grepl(paste0(L3, collapse = '|'), W, ignore.case = TRUE)]
+  W = W[grepl(input$L2, W, ignore.case = TRUE)]
+  W
+})
+```
+
+
